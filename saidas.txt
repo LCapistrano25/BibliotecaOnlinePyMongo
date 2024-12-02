@@ -1,0 +1,323 @@
+---- Inserindo documentos.py
+
+PS C:\Users\LEONARDO\Documents\PyMongoDB> & c:/Users/LEONARDO/Documents/PyMongoDB/library/Scripts/python.exe c:/Users/LEONARDO/Documents/PyMongoDB/inserindo_documentos.py
+
+Inserindo dados nas coleções
+
+Conectado ao banco: Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'livraria_online')
+
+Coleções criadas:
+
+Livros: Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'livraria_online'), 'livros')
+Autores: Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'livraria_online'), 'autores')
+Categorias: Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'livraria_online'), 'categorias')
+Pedidos: Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'livraria_online'), 'pedidos')
+
+
+Documentos inseridos na coleção 'autores':
+
+nome: Gabriel García Márquez
+pais_origem: Colômbia
+biografia: Autor de 'Cem Anos de Solidão', vencedor do Prêmio Nobel de Literatura.
+_id: 674b153e58e4bad480c56a9e
+
+
+nome: William Shakespeare
+pais_origem: Reino Unido
+biografia: Autor de peças clássicas como 'Romeu e Julieta', conhecido como o maior dramaturgo da língua inglesa.
+_id: 674b153e58e4bad480c56a9f
+
+
+nome: Agatha Christie
+pais_origem: Reino Unido
+biografia: Autora de obras policiais como 'Assassinato no Expresso do Oriente', conhecida como a Rainha do Crime.
+_id: 674b153e58e4bad480c56aa0
+
+
+nome: Leo Tolstói
+pais_origem: Rússia
+biografia: Autor de 'Guerra e Paz' e 'Anna Karenina', obras-primas da literatura russa.
+_id: 674b153e58e4bad480c56aa1
+
+
+Documentos inseridos na coleção 'categorias':
+
+nome: Realismo Mágico
+descricao: Histórias que combinam elementos mágicos e fantásticos com a realidade cotidiana.
+_id: 674b153e58e4bad480c56aa2
+
+
+nome: Teatro Clássico
+descricao: Peças que exploram temas universais como amor, tragédia e poder, escritas durante o Renascimento.
+_id: 674b153e58e4bad480c56aa3
+
+
+nome: Mistério e Policial
+descricao: Narrativas que envolvem investigação, crimes e enigmas a serem resolvidos.
+_id: 674b153e58e4bad480c56aa4
+
+
+nome: Romance Épico
+descricao: Histórias grandiosas que exploram questões sociais e históricas profundas.
+_id: 674b153e58e4bad480c56aa5
+
+
+Obter IDs das categorias
+
+ID do documento com 'nome' igual a 'Realismo Mágico': 674b153e58e4bad480c56aa2
+ID do documento com 'nome' igual a 'Teatro Clássico': 674b153e58e4bad480c56aa3
+ID do documento com 'nome' igual a 'Mistério e Policial': 674b153e58e4bad480c56aa4
+ID do documento com 'nome' igual a 'Romance Épico': 674b153e58e4bad480c56aa5
+
+Obter IDs dos autores
+
+ID do documento com 'nome' igual a 'Gabriel García Márquez': 674b153e58e4bad480c56a9e
+ID do documento com 'nome' igual a 'William Shakespeare': 674b153e58e4bad480c56a9f
+ID do documento com 'nome' igual a 'Agatha Christie': 674b153e58e4bad480c56aa0
+ID do documento com 'nome' igual a 'Leo Tolstói': 674b153e58e4bad480c56aa1
+
+Dados em embedding
+Documentos inseridos na coleção 'livros':
+
+titulo: Cem Anos de Solidão
+ano_publicacao: 1967
+preco: 59.9
+ids_autores: [ObjectId('674b153e58e4bad480c56a9e')]
+ids_categorias: [ObjectId('674b153e58e4bad480c56aa2')]
+_id: 674b153e58e4bad480c56aa6
+
+
+titulo: Romeu e Julieta
+ano_publicacao: 1597
+preco: 39.9
+ids_autores: [ObjectId('674b153e58e4bad480c56a9f')]
+ids_categorias: [ObjectId('674b153e58e4bad480c56aa3')]
+_id: 674b153e58e4bad480c56aa7
+
+
+titulo: Assassinato no Expresso do Oriente
+ano_publicacao: 1934
+preco: 45.9
+ids_autores: [ObjectId('674b153e58e4bad480c56aa0')]
+ids_categorias: [ObjectId('674b153e58e4bad480c56aa4')]
+_id: 674b153e58e4bad480c56aa8
+
+
+titulo: Guerra e Paz
+ano_publicacao: 1869
+preco: 89.9
+ids_autores: [ObjectId('674b153e58e4bad480c56aa1')]
+ids_categorias: [ObjectId('674b153e58e4bad480c56aa5')]
+_id: 674b153e58e4bad480c56aa9
+
+
+Obter IDs dos livros
+
+ID do documento com 'titulo' igual a 'Cem Anos de Solidão': 674b153e58e4bad480c56aa6
+ID do documento com 'titulo' igual a 'Romeu e Julieta': 674b153e58e4bad480c56aa7
+ID do documento com 'titulo' igual a 'Assassinato no Expresso do Oriente': 674b153e58e4bad480c56aa8
+ID do documento com 'titulo' igual a 'Guerra e Paz': 674b153e58e4bad480c56aa9
+
+Dados em linking
+Documentos inseridos na coleção 'pedidos':
+
+nome_cliente: José Pereira
+itens: [{'id_livro': ObjectId('674b153e58e4bad480c56aa6'), 'quantidade': 3}]
+status: concluído
+_id: 674b153e58e4bad480c56aaa
+
+
+nome_cliente: Leonardo Silva
+itens: [{'id_livro': ObjectId('674b153e58e4bad480c56aa7'), 'quantidade': 1}, {'id_livro': ObjectId('674b153e58e4bad480c56aa9'), 'quantidade': 2}]
+status: em andamento
+_id: 674b153e58e4bad480c56aab
+
+
+nome_cliente: João Souza
+itens: [{'id_livro': ObjectId('674b153e58e4bad480c56aa8'), 'quantidade': 2}]
+status: cancelado
+_id: 674b153e58e4bad480c56aac
+
+
+PS C:\Users\LEONARDO\Documents\PyMongoDB> 
+
+---------- operacoes.py
+
+PS C:\Users\LEONARDO\Documents\PyMongoDB> & c:/Users/LEONARDO/Documents/PyMongoDB/library/Scripts/python.exe c:/Users/LEONARDO/Documents/PyMongoDB/operacoes.py
+
+Conectado ao banco: Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'livraria_online')
+
+Inserindo dados nas coleções
+
+Documento inserido na coleção 'autores':
+
+nome: George Orwell
+pais_origem: Reino Unido
+biografia: Autor de clássicos como '1984' e 'A Revolução dos Bichos', conhecido por suas críticas ao totalitarismo e às injustiças sociais.
+_id: 674b155c94f25086132e1127
+
+
+Documentos inseridos na coleção 'categorias':
+
+nome: Distopia
+descricao: Obras que retratam sociedades opressivas e autoritárias.
+_id: 674b155c94f25086132e1128
+
+
+nome: Fábula Política
+descricao: Histórias simbólicas que satirizam sistemas políticos.
+_id: 674b155c94f25086132e1129
+
+
+Obter IDs dos autores e categorias
+
+ID do documento com 'nome' igual a 'George Orwell': 674b155c94f25086132e1127
+ID do documento com 'nome' igual a 'Distopia': 674b155c94f25086132e1128
+ID do documento com 'nome' igual a 'Fábula Política': 674b155c94f25086132e1129
+
+
+Documentos inseridos na coleção 'livros':
+
+titulo: 1984
+ano_publicacao: 1949
+preco: 49.9
+ids_autores: [ObjectId('674b155c94f25086132e1127')]
+ids_categorias: [ObjectId('674b155c94f25086132e1128')]
+_id: 674b155c94f25086132e112a
+
+
+titulo: A Revolução dos Bichos
+ano_publicacao: 1945
+preco: 39.9
+ids_autores: [ObjectId('674b155c94f25086132e1127')]
+ids_categorias: [ObjectId('674b155c94f25086132e1129')]
+_id: 674b155c94f25086132e112b
+
+
+Obter IDs das pedidos
+
+ID do documento com 'titulo' igual a '1984': 674b155c94f25086132e112a
+ID do documento com 'titulo' igual a 'A Revolução dos Bichos': 674b155c94f25086132e112b
+
+
+Documentos inseridos na coleção 'pedidos':
+
+nome_cliente: Daniel Alves
+itens: [{'id_livro': ObjectId('674b155c94f25086132e112a'), 'quantidade': 1}]
+status: pendente
+_id: 674b155c94f25086132e112c
+
+
+nome_cliente: Neymar Junior
+itens: [{'id_livro': ObjectId('674b155c94f25086132e112b'), 'quantidade': 2}]
+status: concluído
+_id: 674b155c94f25086132e112d
+
+
+Atualizando dados nas coleções
+
+Documento atualizado na coleção 'autores':
+
+_id: 674b155c94f25086132e1127
+nome: George Orwell
+pais_origem: Reino Unido
+biografia: Autor de clássicos como '1984' e 'A Revolução dos Bichos', conhecido por suas críticas ao totalitarismo e às injustiças sociais. Seu verdadeiro nome é Eric Arthur Blair.      
+
+Todos os livros na coleção 'livros':
+
+Título: Cem Anos de Solidão
+Ano de Publicação: 1967
+Preço: R$ 59.90
+Autores: Gabriel García Márquez
+Categorias: Realismo Mágico
+----------------------------------------
+Título: Romeu e Julieta
+Ano de Publicação: 1597
+Preço: R$ 39.90
+Autores: William Shakespeare
+Categorias: Teatro Clássico
+----------------------------------------
+Título: Assassinato no Expresso do Oriente
+Ano de Publicação: 1934
+Preço: R$ 45.90
+Autores: Agatha Christie
+Categorias: Mistério e Policial
+----------------------------------------
+Título: Guerra e Paz
+Ano de Publicação: 1869
+Preço: R$ 89.90
+Autores: Leo Tolstói
+Categorias: Romance Épico
+----------------------------------------
+Título: 1984
+Ano de Publicação: 1949
+Preço: R$ 49.90
+Autores: George Orwell
+Categorias: Distopia
+----------------------------------------
+Título: A Revolução dos Bichos
+Ano de Publicação: 1945
+Preço: R$ 39.90
+Autores: George Orwell
+Categorias: Fábula Política
+----------------------------------------
+
+Documento deletado da coleção 'categorias':
+nome: Realismo Mágico
+Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'livraria_online'), 'categorias')
+
+Documento deletado da coleção 'livros':
+titulo: Cem Anos de Solidão
+Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'livraria_online'), 'livros')
+
+Obter ID da categoria "Teatro Clássico"
+ID do documento com 'nome' igual a 'Teatro Clássico': 674b153e58e4bad480c56aa3
+
+Consultando livros de uma categoria específica
+Documentos encontrados na coleção 'livros':
+
+_id: 674b153e58e4bad480c56aa7
+titulo: Romeu e Julieta
+ano_publicacao: 1597
+preco: 39.9
+ids_autores: [ObjectId('674b153e58e4bad480c56a9f')]
+ids_categorias: [ObjectId('674b153e58e4bad480c56aa3')]
+
+
+Consultando pedidos de um cliente específico
+
+Documentos encontrados na coleção 'pedidos':
+
+_id: 674b153e58e4bad480c56aaa
+nome_cliente: José Pereira
+itens: [{'id_livro': ObjectId('674b153e58e4bad480c56aa6'), 'quantidade': 3}]
+status: concluído
+
+
+Obter ID do autor 'George Orwell'
+
+ID do documento com 'nome' igual a 'George Orwell': 674b155c94f25086132e1127
+
+Consultando livros de um autor específico
+
+Documentos encontrados na coleção 'livros':
+
+_id: 674b155c94f25086132e112a
+titulo: 1984
+ano_publicacao: 1949
+preco: 49.9
+ids_autores: [ObjectId('674b155c94f25086132e1127')]
+ids_categorias: [ObjectId('674b155c94f25086132e1128')]
+
+
+Filtrando pedidos com status 'pendente'
+
+Documentos encontrados na coleção 'pedidos':
+
+_id: 674b155c94f25086132e112c
+nome_cliente: Daniel Alves
+itens: [{'id_livro': ObjectId('674b155c94f25086132e112a'), 'quantidade': 1}]
+status: pendente
+
+
+PS C:\Users\LEONARDO\Documents\PyMongoDB> 
